@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.css";
+import { NoteProvider } from "./components/NoteProvider";
+import NoteGrid from "./components/NoteGrid";
+import AddNote from "./components/AddNote";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <NoteProvider>
+        <body data-bs-theme="dark">
+          <nav className="navbar bg-body-tertiary">
+            <div className="container-fluid">
+              <a className="navbar-brand" href="#">
+                <h2>Notes</h2>
+              </a>
+            </div>
+          </nav>
+
+          <AddNote />
+          <NoteGrid />
+        </body>
+      </NoteProvider>
+    </>
   );
 }
 
